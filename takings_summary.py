@@ -16,15 +16,20 @@ def calculate_total_taking(all_takings):
     return total_takings
 
 
-def display_total_takings(filename):
+def calculate_transaction_count(all_takings):
+    return len(all_takings)
+
+
+def display_takings_summary(filename):
     """Read the takings file and print the formatted total revenue."""
     all_the_takings = read_takings_file(filename)
-    print(f"Total Takings: £{calculate_total_taking(all_the_takings):.2f}")
+    print(f'Transaction Count: {calculate_transaction_count(all_the_takings)}')
+    print(f"Total Takings:     £{calculate_total_taking(all_the_takings):.2f}")
 
 
 if __name__ == "__main__":
     try:
-        display_total_takings(sys.argv[1])
+        display_takings_summary(sys.argv[1])
     except FileNotFoundError:
         print(f"{sys.argv[0]}: cannot open {sys.argv[1]!r}")
     except IndexError:
