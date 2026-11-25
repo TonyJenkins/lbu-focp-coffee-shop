@@ -29,3 +29,9 @@ average value.
 They would also like the output to display the
 day the CSV file was generated (this is found in the
 file name).
+
+## Part 3
+
+Now we want to analyse the sales to show what the most popular drinks are. 
+The result here should be a neat table of all the drinks, with the total number of each sold,
+and the total revenue from each.
