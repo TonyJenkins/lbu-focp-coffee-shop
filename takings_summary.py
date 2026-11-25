@@ -3,19 +3,7 @@
 """Read coffee takings data and display the total revenue."""
 
 import sys
-
-
-def read_takings_file(filename):
-    """Read a takings file and return each drink, quantity, and unit price."""
-    all_takings = []
-    with open(filename, "r") as takings_file:
-        for transaction in takings_file:
-            drink, quantity, unit_price = transaction.strip().split(",")
-            all_takings.append(
-                (drink, int(quantity), float(unit_price)),
-            )
-
-    return all_takings
+from coffee_shop import read_takings_file
 
 
 def calculate_total_taking(all_takings):
