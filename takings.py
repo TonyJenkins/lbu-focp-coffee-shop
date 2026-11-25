@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 
 
+import sys
+
+
 def read_takings_file(filename):
     all_takings = []
     with open(filename, 'r') as takings_file:
@@ -26,4 +29,9 @@ def display_total_takings(filename):
 
 
 if __name__ == '__main__':
-    display_total_takings('data/friday.csv')
+    try:
+        display_total_takings(sys.argv[1])
+    except FileNotFoundError:
+        print(f'{sys.argv[0]}: cannot open {sys.argv[1]!r}')
+    except IndexError:
+        print(f'{sys.argv[0]}: no takings file specified')
