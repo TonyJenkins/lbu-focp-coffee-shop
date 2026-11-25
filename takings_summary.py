@@ -21,15 +21,19 @@ def calculate_transaction_count(all_takings):
 
 
 def calculate_average_transaction_value(all_takings):
-    return calculate_total_taking(all_takings) / calculate_transaction_count(all_takings)
+    return calculate_total_taking(all_takings) / calculate_transaction_count(
+        all_takings
+    )
 
 
 def display_takings_summary(filename):
     """Read the takings file and print the formatted total revenue."""
     all_the_takings = read_takings_file(filename)
-    print(f'Transaction Count: {calculate_transaction_count(all_the_takings)}')
+    print(f"Transaction Count: {calculate_transaction_count(all_the_takings)}")
     print(f"Total Takings:     £{calculate_total_taking(all_the_takings):.2f}")
-    print(f'Average Take:      £{calculate_average_transaction_value(all_the_takings):.2f}')
+    print(
+        f"Average Take:      £{calculate_average_transaction_value(all_the_takings):.2f}"
+    )
 
 
 if __name__ == "__main__":
