@@ -19,3 +19,13 @@ The price is stored for each transaction because the unit price can
 change because of discounts, club memberships, and the like.
 
 The first output will be the total takings for a day.
+
+## Part 2
+
+The owner would now like to know the total number
+of transactions recorded for the day, and the
+average value.
+
+They would also like the output to display the
+day the CSV file was generated (this is in the
+file name).
