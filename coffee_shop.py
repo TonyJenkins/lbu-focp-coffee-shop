@@ -3,14 +3,22 @@
 """Read transaction data for the coffee shop."""
 
 
+COFFEE_FULL_NAMES = {
+    "espresso": "Espresso",
+    "americano": "Americano",
+    "macchiato": "Macchiato",
+    "flatwhite": "Flat White",
+    "latte": "Latte",
+    "icedlatte": "Iced Latte",
+    "cappuccino": "Cappuccino",
+    "mocha": "Mocha",
+    "hotchocolate": "Hot Chocolate",
+    "tea": "Tea",
+}
+
+
 def read_takings_file(filename):
     """Read transactions from a CSV-formatted takings file.
-
-    Args:
-        filename: Path to the takings file.
-
-    Returns:
-        A list of ``(drink, quantity, unit_price)`` tuples.
     """
     all_takings = []
     with open(filename, "r") as takings_file:
@@ -21,6 +29,13 @@ def read_takings_file(filename):
             )
 
     return all_takings
+
+
+def full_coffee_name(drink_code):
+    if drink_code in COFFEE_FULL_NAMES:
+        return COFFEE_FULL_NAMES[drink_code]
+    else:
+        return drink_code.title()
 
 
 if __name__ == "__main__":
