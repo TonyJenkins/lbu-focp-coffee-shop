@@ -3,7 +3,7 @@
 """Display a summary of the coffee shop takings."""
 
 import sys
-from coffee_shop import read_takings_file
+from coffee_shop import full_coffee_name, read_takings_file
 
 
 def count_the_drinks(transactions):
@@ -22,10 +22,10 @@ def print_drinks_table(drink_counts):
     from tabulate import tabulate
 
     table = [['Drink', 'Count']]
-    for each_drink in drink_counts:
-        table.append([each_drink, drink_counts[each_drink]])
+    for each_drink in sorted(drink_counts):
+        table.append([full_coffee_name(each_drink), drink_counts[each_drink]])
 
-    print(tabulate(table, headers='firstrow'))
+    print(tabulate(table, headers='firstrow', tablefmt="grid"))
 
 
 def generate_drinks_list(filename):
