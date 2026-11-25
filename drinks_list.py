@@ -7,6 +7,7 @@ from coffee_shop import full_coffee_name, read_takings_file
 
 
 def count_the_drinks(transactions):
+    """Count quantities and values for each drink."""
     drink_counts = {}
     drink_values = {}
 
@@ -23,6 +24,7 @@ def count_the_drinks(transactions):
 
 
 def print_drinks_table(drink_counts, drink_values):
+    """Print a table of drink quantities and total values."""
     from tabulate import tabulate
 
     table = [["Drink", "Count", "Total Value"]]
@@ -39,6 +41,7 @@ def print_drinks_table(drink_counts, drink_values):
 
 
 def generate_drinks_list(filename):
+    """Read takings data and print a drink summary."""
     transactions = read_takings_file(filename)
     drink_counts, drink_values = count_the_drinks(transactions)
     print_drinks_table(drink_counts, drink_values)

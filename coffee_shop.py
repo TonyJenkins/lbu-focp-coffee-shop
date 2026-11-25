@@ -17,7 +17,7 @@ COFFEE_FULL_NAMES = {
 
 
 def read_takings_file(filename):
-    """Read transactions from a CSV-formatted takings file."""
+    """Read takings from a CSV-formatted file."""
     all_takings = []
     with open(filename, "r") as takings_file:
         for transaction in takings_file:
@@ -30,10 +30,11 @@ def read_takings_file(filename):
 
 
 def full_coffee_name(drink_code):
+    """Return a drink code's full name, or the title-cased code."""
     if drink_code in COFFEE_FULL_NAMES:
         return COFFEE_FULL_NAMES[drink_code]
-    else:
-        return drink_code.title()
+
+    return drink_code.title()
 
 
 if __name__ == "__main__":
