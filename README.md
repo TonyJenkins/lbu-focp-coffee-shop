@@ -27,5 +27,5 @@ of transactions recorded for the day, and the
 average value.
 
 They would also like the output to display the
-day the CSV file was generated (this is in the
+day the CSV file was generated (this is found in the
 file name).
