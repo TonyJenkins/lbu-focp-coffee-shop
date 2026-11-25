@@ -14,10 +14,10 @@ def count_the_drinks(transactions):
         drink, quantity, price = each_transaction
         if drink in drink_counts:
             drink_counts[drink] += quantity
-            drink_values[drink] += (quantity * price)
+            drink_values[drink] += quantity * price
         else:
             drink_counts[drink] = quantity
-            drink_values[drink] = (quantity * price)
+            drink_values[drink] = quantity * price
 
     return drink_counts, drink_values
 
@@ -25,18 +25,24 @@ def count_the_drinks(transactions):
 def print_drinks_table(drink_counts, drink_values):
     from tabulate import tabulate
 
-    table = [['Drink', 'Count', 'Total Value']]
+    table = [["Drink", "Count", "Total Value"]]
     for each_drink in sorted(drink_counts):
-        table.append([full_coffee_name(each_drink), drink_counts[each_drink], f'£{drink_values[each_drink]:7.2f}'])
+        table.append(
+            [
+                full_coffee_name(each_drink),
+                drink_counts[each_drink],
+                f"£{drink_values[each_drink]:7.2f}",
+            ]
+        )
 
-    print(tabulate(table, headers='firstrow', tablefmt="grid"))
+    print(tabulate(table, headers="firstrow", tablefmt="grid"))
 
 
 def generate_drinks_list(filename):
     transactions = read_takings_file(filename)
     drink_counts, drink_values = count_the_drinks(transactions)
     print_drinks_table(drink_counts, drink_values)
-    
+
 
 if __name__ == "__main__":
     try:

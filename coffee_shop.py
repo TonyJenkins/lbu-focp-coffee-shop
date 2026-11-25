@@ -2,7 +2,6 @@
 
 """Read transaction data for the coffee shop."""
 
-
 COFFEE_FULL_NAMES = {
     "espresso": "Espresso",
     "americano": "Americano",
@@ -18,8 +17,7 @@ COFFEE_FULL_NAMES = {
 
 
 def read_takings_file(filename):
-    """Read transactions from a CSV-formatted takings file.
-    """
+    """Read transactions from a CSV-formatted takings file."""
     all_takings = []
     with open(filename, "r") as takings_file:
         for transaction in takings_file:
