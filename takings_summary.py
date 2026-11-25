@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-"""Read coffee takings data and display the total revenue."""
+"""Read coffee takings data and display a summary of the transactions."""
 
 import sys
 from coffee_shop import read_takings_file
@@ -17,17 +17,19 @@ def calculate_total_taking(all_takings):
 
 
 def calculate_transaction_count(all_takings):
+    """Return the number of transactions in the takings data."""
     return len(all_takings)
 
 
 def calculate_average_transaction_value(all_takings):
+    """Calculate and return the average value of a transaction."""
     return calculate_total_taking(all_takings) / calculate_transaction_count(
         all_takings
     )
 
 
 def display_takings_summary(filename):
-    """Read the takings file and print the formatted total revenue."""
+    """Read a takings file and print its transaction count and revenue summary."""
     all_the_takings = read_takings_file(filename)
     print(f"Transaction Count: {calculate_transaction_count(all_the_takings)}")
     print(f"Total Takings:     £{calculate_total_taking(all_the_takings):.2f}")
